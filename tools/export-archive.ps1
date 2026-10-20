@@ -7,9 +7,10 @@
   skills from ~/.agents/skills, snapshots a redacted config.toml, and rebuilds
   INVENTORY.md plus the JSON metadata files.
 
-  Every secret and private LAN address is replaced with a placeholder before the
-  result is written. The script is idempotent; run it from a clean working tree
-  so it does not clobber local edits.
+  SECURITY
+  Personal values (device keys, IDs, LAN addresses) are NEVER hardcoded here.
+  They live in .redaction.local.json at the repo root, which is gitignored.
+  Only generic safety-net patterns run when that file is absent.
 
 .EXAMPLE
   pwsh tools/export-archive.ps1
@@ -23,21 +24,49 @@ param(
 
 $ErrorActionPreference = 'Stop'
 
-# --- values that must never be published -------------------------------------
-$redactions = [ordered]@{
-  '1867252e76de3f97abef42da5d1ee98d187c944f79041a1b4b632650e1b4aed9' = '<LOCAL_KEY_32HEX>'
-  '71fa3941f24e469e9f9dd96c0458fde6'                             = '<DEVICE_UID_32HEX>'
-  'c10f670000bf'                                                   = '<DEVICE_ID>'
-  '192.168.1.103' = '192.168.1.<YAMAHA>'
-  '192.168.1.105' = '192.168.1.<ROBOT>'
-  '192.168.1.107' = '192.168.1.<ROBOT_GATEWAY>'
-  '192.168.1.102' = '192.168.1.<ZIDOO>'
-  '192.168.1.119' = '192.168.1.<OTHER>'
+# ---------------------------------------------------------------------------
+# Redaction
+# ---------------------------------------------------------------------------
+# Per-skill placeholder for private hosts, keyed by skill directory name so the
+# mapping itself carries no real address.
+$skillHostPlaceholder = [ordered]@{
+  '功放'       = '192.168.1.<YAMAHA>'
+  '芝杜'       = '192.168.1.<ZIDOO>'
+  '扫地机器人' = '192.168.1.<ROBOT>'
 }
 
+function Get-RedactionMap {
+  $local = Join-Path $OutDir '.redaction.local.json'
+  $map = [ordered]@{}
+  if (Test-Path -LiteralPath $local) {
+    $obj = Get-Content -LiteralPath $local -Raw | ConvertFrom-Json
+    if ($obj.exact) {
+      foreach ($p in $obj.exact.PSObject.Properties) { $map[$p.Name] = $p.Value }
+    }
+    Write-Host "redaction: loaded $($map.Count) exact value(s) from .redaction.local.json"
+  }
+  else {
+    Write-Warning "redaction: .redaction.local.json not found - only generic patterns run. Create it before publishing."
+  }
+  return $map
+}
+
+$exactMap = Get-RedactionMap
+
 function Protect-Text {
-  param([string] $Text)
-  foreach ($k in $redactions.Keys) { $Text = $Text.Replace($k, $redactions[$k]) }
+  param([string] $Text, [string] $SkillName = '')
+  if (-not $Text) { return $Text }
+
+  # 1. exact personal values from the local, uncommitted map
+  foreach ($k in $exactMap.Keys) { $Text = $Text.Replace($k, $exactMap[$k]) }
+
+  # 2. generic safety net: a 32-byte hex key is never legitimate content here
+  $Text = [regex]::Replace($Text, '\b[0-9a-fA-F]{64}\b', '<LOCAL_KEY_32HEX>')
+
+  # 3. private hosts inside device skills, resolved by folder name
+  if ($SkillName -and $skillHostPlaceholder.Contains($SkillName)) {
+    $Text = [regex]::Replace($Text, '\b192\.168\.1\.\d{1,3}\b', $skillHostPlaceholder[$SkillName])
+  }
   return $Text
 }
 
@@ -48,13 +77,13 @@ function Read-Frontmatter {
   if (-not (Test-Path -LiteralPath $Path)) { return $r }
   $raw = Get-Content -LiteralPath $Path -Raw
   if ($raw -notmatch '(?s)^---\s*\r?\n(.*?)\r?\n---') { return $r }
-  $key = $null; $buf = @(); $mode = 'plain'
+  $key = $null; $buf = @()
   foreach ($ln in ($Matches[1] -split "\r?\n")) {
     if ($ln -match '^([A-Za-z0-9_-]+):\s*(.*)$') {
       if ($key) { Set-Fm $r $key $buf }
       $key = $Matches[1]; $val = $Matches[2].Trim()
-      if ($val -match '^[>|][-+]?$') { $mode = 'block'; $buf = @() }
-      else { $mode = 'plain'; $buf = @($val.Trim('"').Trim("'")) }
+      if ($val -match '^[>|][-+]?$') { $buf = @() }
+      else { $buf = @($val.Trim('"').Trim("'")) }
     }
     elseif ($key -and $ln.Trim()) { $buf += $ln.Trim() }
   }
@@ -75,27 +104,38 @@ New-Item -ItemType Directory -Path $skillsDst -Force | Out-Null
 Get-ChildItem -LiteralPath $skillsSrc -Directory |
   Where-Object { $_.Name -ne '.system' } |
   ForEach-Object {
-    Copy-Item -LiteralPath $_.FullName -Destination (Join-Path $skillsDst $_.Name) -Recurse -Force
-  }
+    $name = $_.Name
+    $dest = Join-Path $skillsDst $name
+    # Wipe first: Copy-Item into an existing directory nests a copy inside it,
+    # which silently duplicated every skill on a second run.
+    if (Test-Path -LiteralPath $dest) { Remove-Item -LiteralPath $dest -Recurse -Force }
+    # robocopy excludes nested VCS metadata so an upstream skill repo does not
+    # land in the archive as a gitlink with none of its files.
+    & robocopy $_.FullName $dest /E /XD .git node_modules __pycache__ /NFL /NDL /NJH /NJS /NP | Out-Null
+    if ($LASTEXITCODE -ge 8) { throw "robocopy failed ($LASTEXITCODE) for $name" }
 
-# redact in place
-Get-ChildItem -LiteralPath $skillsDst -Recurse -File -Include *.md,*.json,*.js,*.py,*.ps1,*.sh |
-  ForEach-Object {
-    $t = Get-Content -LiteralPath $_.FullName -Raw
-    $n = Protect-Text $t
-    if ($n -ne $t) { Set-Content -LiteralPath $_.FullName -Value $n -Encoding UTF8 -NoNewline }
+    # redact that skill's files, scoped by folder name
+    Get-ChildItem -LiteralPath $dest -Recurse -File |
+      Where-Object { $_.Extension -in @('.md','.json','.js','.ts','.py','.ps1','.sh','.yml','.yaml','.txt','.css','.html') } |
+      ForEach-Object {
+        $t = Get-Content -LiteralPath $_.FullName -Raw -ErrorAction SilentlyContinue
+        if (-not $t) { return }
+        $n = Protect-Text -Text $t -SkillName $name
+        if ($n -ne $t) { Set-Content -LiteralPath $_.FullName -Value $n -Encoding UTF8 -NoNewline }
+      }
   }
 Write-Host "skills exported: $((Get-ChildItem -LiteralPath $skillsDst -Directory).Count)"
 
 # --- 2. metadata -------------------------------------------------------------
 $rows = @()
 Get-ChildItem -LiteralPath $skillsDst -Directory | ForEach-Object {
+  $name  = $_.Name
   $fm    = Read-Frontmatter (Join-Path $_.FullName 'SKILL.md')
   $files = @(Get-ChildItem -LiteralPath $_.FullName -Recurse -File -ErrorAction SilentlyContinue)
   $rows += [pscustomobject]@{
-    dir            = $_.Name
-    name           = if ($fm.name) { $fm.name } else { $_.Name }
-    description    = Protect-Text $fm.description
+    dir            = $name
+    name           = if ($fm.name) { $fm.name } else { $name }
+    description    = Protect-Text -Text $fm.description -SkillName $name
     file_count     = $files.Count
     total_bytes    = ($files | Measure-Object Length -Sum).Sum
     has_scripts    = Test-Path -LiteralPath (Join-Path $_.FullName 'scripts')
@@ -110,11 +150,12 @@ $agents = @()
 $agentsRoot = Join-Path $AgentsHome 'skills'
 if (Test-Path -LiteralPath $agentsRoot) {
   $agents = @(Get-ChildItem -LiteralPath $agentsRoot -Directory | ForEach-Object {
+    $name  = $_.Name
     $fm    = Read-Frontmatter (Join-Path $_.FullName 'SKILL.md')
     $files = @(Get-ChildItem -LiteralPath $_.FullName -Recurse -File -ErrorAction SilentlyContinue)
     [pscustomobject]@{
-      name        = if ($fm.name) { $fm.name } else { $_.Name }
-      description = Protect-Text $fm.description
+      name        = if ($fm.name) { $fm.name } else { $name }
+      description = Protect-Text -Text $fm.description -SkillName $name
       file_count  = $files.Count
       total_bytes = ($files | Measure-Object Length -Sum).Sum
     }
@@ -130,7 +171,7 @@ if (Test-Path -LiteralPath $cfgPath) {
   $cfg = [regex]::Replace($cfg,
     '(?m)^(\s*(?:experimental_bearer_token|MINIMAX_API_KEY|api_key|token|password|secret|client_secret)\s*=\s*")[^"]*(".*)$',
     '$1***REDACTED***$2')
-  $cfg = Protect-Text $cfg
+  $cfg = Protect-Text -Text $cfg
   $hdr = @(
     '# ARCHIVED REDACTED COPY of ~/.codex/config.toml',
     '# Secret values replaced with ***REDACTED*** before publishing.',

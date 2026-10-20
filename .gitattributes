@@ -1,0 +1,16 @@
+# Normalize line endings on checkin: keep LF in the repository.
+* text=auto eol=lf
+
+# Binary assets must never be touched.
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.webp binary
+*.pdf  binary
+*.woff  binary
+*.woff2 binary
+*.zip  binary
+*.exe  binary
+*.dll  binary

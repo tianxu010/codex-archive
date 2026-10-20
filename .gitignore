@@ -17,3 +17,6 @@ remote.json
 tmp/
 *.tmp
 *.log
+
+# local redaction map - contains real values, never commit
+.redaction.local.json
