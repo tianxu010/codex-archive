@@ -1,0 +1,19 @@
+# OS / editor noise
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# never commit real credentials
+*.env
+.env.*
+auth.json
+remote-control-oauth.json
+remote.json
+*credentials*
+*.key
+*.pem
+
+# local scratch
+tmp/
+*.tmp
+*.log

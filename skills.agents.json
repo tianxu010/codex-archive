@@ -1,0 +1,812 @@
+[
+  {
+    "name": "agent-browser",
+    "description": "Browser automation CLI for AI agents. Use when the user needs to interact with websites, including navigating pages, filling forms, clicking buttons, taking screenshots, extracting data, testing web apps, or automating any browser task. Triggers include requests to \"open a website\", \"fill out a form\", \"click a button\", \"take a screenshot\", \"scrape data from a page\", \"test this web app\", \"login to a site\", \"automate browser actions\", or any task requiring programmatic web interaction.",
+    "file_count": 11,
+    "total_bytes": 61429.0
+  },
+  {
+    "name": "agent-mbti",
+    "description": "AI Agent personality diagnosis and configuration system based on MBTI framework. Use when users want to (1) test/diagnose an Agent's personality type, (2) understand the gap between Agent's actual personality and user's desired personality, (3) generate configuration recommendations to adjust Agent behavior, (4) customize Agent's communication style, proactivity, reasoning approach, or execution patterns. Supports both free tier (quick assessment) and premium tier (full 93-question assessment with detailed diagnostics).",
+    "file_count": 6,
+    "total_bytes": 21436.0
+  },
+  {
+    "name": "agent-tools",
+    "description": "Run 150+ AI apps via inference.sh CLI - image generation, video creation, LLMs, search, 3D, Twitter automation. Models: FLUX, Veo, Gemini, Grok, Claude, Seedance, OmniHuman, Tavily, Exa, OpenRouter, and many more. Use when running AI apps, generating images/videos, calling LLMs, web search, or automating Twitter. Triggers: inference.sh, infsh, ai model, run ai, serverless ai, ai api, flux, veo, claude api, image generation, video generation, openrouter, tavily, exa search, twitter api, grok",
+    "file_count": 5,
+    "total_bytes": 15271.0
+  },
+  {
+    "name": "agently-mail",
+    "description": "通过 agently-cli 命令行工具操作邮件：发送、回复、转发、搜索、读取、下载附件、管理收件箱。当用户需要进行任何邮件相关操作时使用此 skill。",
+    "file_count": 1,
+    "total_bytes": 9828.0
+  },
+  {
+    "name": "algorithmic-art",
+    "description": "Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code, generative art, algorithmic art, flow fields, or particle systems. Create original algorithmic art rather than copying existing artists' work to avoid copyright violations.",
+    "file_count": 4,
+    "total_bytes": 61327.0
+  },
+  {
+    "name": "analytics-dashboard",
+    "description": "数据看板。业务数据看板生成器。自动搭建KPI监控看板、实时指标追踪、定期自动报告推送 Keywords: 数据看板, dashboard, KPI监控, 业务分析.",
+    "file_count": 4,
+    "total_bytes": 9877.0
+  },
+  {
+    "name": "api-design",
+    "description": "设计和实现 API：RESTful 规范、请求响应模式、错误处理。",
+    "file_count": 1,
+    "total_bytes": 308.0
+  },
+  {
+    "name": "arxiv-reader",
+    "description": "arXiv论文智能阅读助手。通过对话式交互阅读和分析学术论文。Keywords: 论文, arXiv, paper, academic research.",
+    "file_count": 4,
+    "total_bytes": 11172.0
+  },
+  {
+    "name": "arxiv-watcher",
+    "description": "Search and summarize papers from ArXiv. Use when the user asks for the latest research, specific topics on ArXiv, or a daily summary of AI papers.",
+    "file_count": 3,
+    "total_bytes": 1891.0
+  },
+  {
+    "name": "ask-matt",
+    "description": "Ask which skill or flow fits your situation. A router over the skills in this repo.",
+    "file_count": 3,
+    "total_bytes": 15953.0
+  },
+  {
+    "name": "azure-observability",
+    "description": "Azure Observability Services including Azure Monitor, Application Insights, Log Analytics, Alerts, and Workbooks. Provides metrics, APM, distributed tracing, KQL queries, and interactive reports. USE FOR: Azure Monitor, Application Insights, Log Analytics, Alerts, Workbooks, metrics, APM, distributed tracing, KQL queries, interactive reports, observability, monitoring dashboards. DO NOT USE FOR: instrumenting apps with App Insights SDK (use appinsights-instrumentation), querying Kusto/ADX clusters (use azure-kusto), cost analysis (use azure-cost-optimization).",
+    "file_count": 9,
+    "total_bytes": 13341.0
+  },
+  {
+    "name": "brainstorming",
+    "description": "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation.",
+    "file_count": 1,
+    "total_bytes": 4796.0
+  },
+  {
+    "name": "brand-guidelines",
+    "description": "Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company design standards apply.",
+    "file_count": 2,
+    "total_bytes": 13972.0
+  },
+  {
+    "name": "bug-hunt",
+    "description": "复现并定位问题，给出最小修复和验证路径。",
+    "file_count": 1,
+    "total_bytes": 275.0
+  },
+  {
+    "name": "cantian-bazi",
+    "description": "八字排盘与农历/干支日期查询技能。用于用户请求“算八字”“四柱排盘”“阳历/农历时间转八字”“查询某天农历或干支日期”“查黄历/宜忌”等场景；关键词包括：八字、四柱、命理、阳历转八字、农历转八字、黄历、宜忌、干支日期、农历日期。 / Bazi charting and Chinese calendar conversion skill. Use for requests like “calculate my Bazi”, “Four Pillars chart”, “convert solar/lunar datetime to Bazi”, “check Chinese almanac (huangli)”, or “check auspicious/inauspicious activities (yi-ji) for a date”; keywords include: Bazi, Four Pillars, solar-to-Bazi, lunar-to-Bazi, Chinese calendar, Chinese almanac (huangli), yi-ji, heavenly stems and earthly branches.",
+    "file_count": 8,
+    "total_bytes": 9011.0
+  },
+  {
+    "name": "canvas-design",
+    "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations.",
+    "file_count": 83,
+    "total_bytes": 5556963.0
+  },
+  {
+    "name": "china-stock-analysis",
+    "description": "A股价值投资分析工具，提供股票筛选、个股深度分析、行业对比和估值计算功能。基于价值投资理论，使用akshare获取公开财务数据，适合低频交易的普通投资者。",
+    "file_count": 35,
+    "total_bytes": 425190.0
+  },
+  {
+    "name": "citation-manager",
+    "description": "引用管理。学术引用管理助手。文献导入整理、多种引用格式生成(APA/MLA/Chicago)、参考文献列表管理 Keywords: 引用管理, citation, 参考文献, 学术写作.",
+    "file_count": 8,
+    "total_bytes": 20606.0
+  },
+  {
+    "name": "claude-handoff",
+    "description": "Hand the current conversation off to a fresh background agent that picks up the work immediately.",
+    "file_count": 2,
+    "total_bytes": 1465.0
+  },
+  {
+    "name": "cloud-upload-backup",
+    "description": "Cloud file upload and backup tool. Upload local files to Tencent SMH cloud storage, viewable in QClaw Mini Program.",
+    "file_count": 5,
+    "total_bytes": 35269.0
+  },
+  {
+    "name": "cninfo-to-notebooklm",
+    "description": "Use when user wants to analyze China stock reports (A-share or Hong Kong), upload annual/quarterly reports to NotebookLM, or research a Chinese listed company's financials",
+    "file_count": 11,
+    "total_bytes": 10924746.0
+  },
+  {
+    "name": "code-review",
+    "description": "Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes: Standards (does the code follow this repo's documented coding standards?) and Spec (does the code match what the originating issue/spec asked for?). Runs both reviews in parallel sub-agents and reports them side by side. Use when the user wants to review a branch, a PR, work-in-progress changes, or asks to \\\"review since X\\\".",
+    "file_count": 2,
+    "total_bytes": 6779.0
+  },
+  {
+    "name": "codebase-design",
+    "description": "Shared vocabulary for designing deep modules. Use when the user wants to design or improve a module's interface, find deepening opportunities, decide where a seam goes, make code more testable or AI-navigable, or when another skill needs the deep-module vocabulary.",
+    "file_count": 4,
+    "total_bytes": 11963.0
+  },
+  {
+    "name": "content-factory",
+    "description": "多代理内容生产线。自动化从选题研究到内容创作的全流程。Keywords: 内容创作, 文案, content creation, copywriting.",
+    "file_count": 4,
+    "total_bytes": 10751.0
+  },
+  {
+    "name": "content-repurposer",
+    "description": "内容复用引擎。将长文章/视频自动拆解为适合不同平台的短内容。Keywords: 内容复用, 多平台适配, content repurpose, 内容拆解.",
+    "file_count": 4,
+    "total_bytes": 10235.0
+  },
+  {
+    "name": "data-analysis",
+    "description": "分析数据：计算统计指标、识别模式、生成可视化图表。",
+    "file_count": 1,
+    "total_bytes": 316.0
+  },
+  {
+    "name": "diagnosing-bugs",
+    "description": "Diagnosis loop for hard bugs and performance regressions. Use when the user says \"diagnose\"/\"debug this\", or reports something broken/throwing/failing/slow.",
+    "file_count": 3,
+    "total_bytes": 10133.0
+  },
+  {
+    "name": "doc-coauthoring",
+    "description": "Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content. This workflow helps users efficiently transfer context, refine content through iteration, and verify the doc works for readers. Trigger when user mentions writing docs, creating proposals, drafting specs, or similar documentation tasks.",
+    "file_count": 1,
+    "total_bytes": 16296.0
+  },
+  {
+    "name": "doc-writer",
+    "description": "编写技术文档：清晰结构、代码示例、解释原因而非现象。",
+    "file_count": 1,
+    "total_bytes": 320.0
+  },
+  {
+    "name": "docx",
+    "description": "Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files). Triggers include: any mention of \\\"Word doc\\\", \\\"word document\\\", \\\".docx\\\", or requests to produce professional documents with formatting like tables of contents, headings, page numbers, or letterheads. Also use when extracting or reorganizing content from .docx files, inserting or replacing images in documents, performing find-and-replace in Word files, working with tracked changes or comments, or converting content into a polished Word document. If the user asks for a \\\"report\\\", \\\"memo\\\", \\\"letter\\\", \\\"template\\\", or similar deliverable as a Word or .docx file, use this skill. Do NOT use for PDFs, spreadsheets, Google Docs, or general coding tasks unrelated to document generation.",
+    "file_count": 61,
+    "total_bytes": 1143099.0
+  },
+  {
+    "name": "domain-modeling",
+    "description": "Build and sharpen a project's domain model. Use when discussing codebase terminology, writing or editing a CONTEXT.md, or recording or editing an ADR.",
+    "file_count": 4,
+    "total_bytes": 8639.0
+  },
+  {
+    "name": "earnings-tracker",
+    "description": "公司财报追踪器。自动追踪科技公司财报发布日期并生成摘要。Keywords: 财报, earnings, financial report.",
+    "file_count": 4,
+    "total_bytes": 10604.0
+  },
+  {
+    "name": "email-skill",
+    "description": "统一邮件入口：支持平台公邮服务与个人邮箱(IMAP/SMTP)双通道，用户可按需求自主选择。所有与发信相关的需求，都先经由该SKILL处理路由",
+    "file_count": 13,
+    "total_bytes": 54642.0
+  },
+  {
+    "name": "文件整理",
+    "description": "智能文件/桌面整理技能。当用户 prompt 中包含\"桌面整理\"、\"文件整理\"、\"整理桌面\"、\"整理文件\"、\"整理文件夹\"、\"清理桌面\"、\"排列桌面\"、\"桌面排列\"、\"桌面排序\"、\"按类型排列\"、\"按项目类型排列\"等字样时，优先使用此技能。此技能提供零删除、零篡改的安全文件归类能力，支持智能扫描、关键词/语义匹配归入已有文件夹、按频率或文件类型自动分类、完整的操作日志和一键回撤。同时支持桌面图标按项目类型排列功能。",
+    "file_count": 8,
+    "total_bytes": 119407.0
+  },
+  {
+    "name": "find-skills",
+    "description": "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express interest in extending capabilities. This skill should be used when the user is looking for functionality that might exist as an installable skill.",
+    "file_count": 1,
+    "total_bytes": 4821.0
+  },
+  {
+    "name": "frontend-design",
+    "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics.",
+    "file_count": 2,
+    "total_bytes": 14939.0
+  },
+  {
+    "name": "frontend-polish",
+    "description": "优化界面细节、响应式状态和视觉一致性。",
+    "file_count": 1,
+    "total_bytes": 285.0
+  },
+  {
+    "name": "git-guardrails-claude-code",
+    "description": "Set up Claude Code hooks to block dangerous git commands (push, reset --hard, clean, branch -D, etc.) before they execute. Use when user wants to prevent destructive git operations, add git safety hooks, or block git push/reset in Claude Code.",
+    "file_count": 3,
+    "total_bytes": 3055.0
+  },
+  {
+    "name": "github-ai-trends",
+    "description": "Generate GitHub AI trending project reports as formatted text leaderboards. Fetches top-starred AI/ML/LLM repos by daily, weekly, or monthly period and renders a styled leaderboard. Use when the user asks for AI project trends, GitHub trending, AI leaderboard, or wants to see popular AI repos.",
+    "file_count": 3,
+    "total_bytes": 5996.0
+  },
+  {
+    "name": "goal-tracker",
+    "description": "年度目标追踪管理器。设定目标、拆解为可执行计划、追踪进度。Keywords: 目标, 计划, 进度, goal, OKR, milestone.",
+    "file_count": 4,
+    "total_bytes": 10519.0
+  },
+  {
+    "name": "grill-me",
+    "description": "A relentless interview to sharpen a plan or design.",
+    "file_count": 2,
+    "total_bytes": 306.0
+  },
+  {
+    "name": "grill-with-docs",
+    "description": "A relentless interview to sharpen a plan or design, which also creates docs (ADR's and glossary) as we go.",
+    "file_count": 2,
+    "total_bytes": 404.0
+  },
+  {
+    "name": "grilling",
+    "description": "Grill the user relentlessly about a plan, decision, or idea. Use when the user wants to stress-test their thinking, or uses any 'grill' trigger phrases.",
+    "file_count": 2,
+    "total_bytes": 2131.0
+  },
+  {
+    "name": "habit-coach",
+    "description": "习惯养成教练。充当AI问责伙伴，帮助建立、追踪和坚持好习惯。Keywords: 习惯养成, 自律, habit tracker, 打卡.",
+    "file_count": 4,
+    "total_bytes": 9923.0
+  },
+  {
+    "name": "habit-tracker",
+    "description": "习惯追踪和问责教练。每日主动签到，追踪习惯连续天数，自适应激励。Keywords: 习惯, 打卡, 自律, habit tracker, accountability.",
+    "file_count": 4,
+    "total_bytes": 10395.0
+  },
+  {
+    "name": "handoff",
+    "description": "Compact the current conversation into a handoff document for another agent to pick up.",
+    "file_count": 2,
+    "total_bytes": 1056.0
+  },
+  {
+    "name": "huggingface-trends",
+    "description": "Monitor and fetch trending models from Hugging Face with support for filtering by task, library, and popularity metrics. Use when users want to check trending AI models, compare model popularity, or explore popular models by task or library. Supports export to JSON and formatted output.",
+    "file_count": 8,
+    "total_bytes": 42985.0
+  },
+  {
+    "name": "humanize-ai-text",
+    "description": "AI 生成文本人性化改写。将 ChatGPT、Claude、GPT 等生成的内容改写为自然流畅的表达，可通过 GPTZero、Turnitin、Originality.ai 等 AI 检测工具。基于维基百科\"AI 写作特征\"指南，让机械化的 AI 文本变得自然且不可检测。",
+    "file_count": 6,
+    "total_bytes": 28287.0
+  },
+  {
+    "name": "humanizer",
+    "description": "Remove signs of AI-generated writing from text. Use when editing or reviewing text to make it sound more natural and human-written. Based on Wikipedia's comprehensive \"Signs of AI writing\" guide. Detects and fixes patterns including: inflated symbolism, promotional language, superficial -ing analyses, vague attributions, em dash overuse, rule of three, AI vocabulary words, negative parallelisms, and excessive conjunctive phrases. Credits: Original skill by @blader - https://github.com/blader/humanizer",
+    "file_count": 2,
+    "total_bytes": 23876.0
+  },
+  {
+    "name": "idea-validator",
+    "description": "创业点子验证器。在开始编码前自动扫描GitHub、HN、npm等平台验证创意独特性。Keywords: 创意验证, 竞品分析, idea validation.",
+    "file_count": 4,
+    "total_bytes": 10704.0
+  },
+  {
+    "name": "imap-smtp-email",
+    "description": "通过 IMAP/SMTP 收发邮件。支持查看新邮件/未读邮件、获取邮件内容、搜索邮箱、标记已读/未读，以及发送带附件的邮件。兼容所有 IMAP/SMTP 邮件服务器，包括 Gmail、Outlook、163.com、vip.163.com、126.com、vip.126.com、188.com 和 vip.188.com。",
+    "file_count": 763,
+    "total_bytes": 6707861.0
+  },
+  {
+    "name": "implement",
+    "description": "Implement a piece of work based on a spec or set of tickets.",
+    "file_count": 2,
+    "total_bytes": 592.0
+  },
+  {
+    "name": "implement-spec",
+    "description": "Implement a specification in code.",
+    "file_count": 2,
+    "total_bytes": 2226.0
+  },
+  {
+    "name": "improve-codebase-architecture",
+    "description": "Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick.",
+    "file_count": 3,
+    "total_bytes": 12999.0
+  },
+  {
+    "name": "internal-comms",
+    "description": "A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill whenever asked to write some sort of internal communications (status reports, leadership updates, 3P updates, company newsletters, FAQs, incident reports, project updates, etc.).",
+    "file_count": 6,
+    "total_bytes": 22899.0
+  },
+  {
+    "name": "kc-gui",
+    "description": "Use the bundled kc.exe Windows agent to perform GUI-based desktop automation tasks that cannot be handled through CLI or scripting alone. Use this skill when the user needs to interact with Windows GUI applications (clicking buttons, filling forms, reading on-screen text, navigating menus, managing windows, automating desktop workflows). Only works on Windows. Only allowed to operate on whitelisted applications — 腾讯会议、QQ音乐、网易云音乐、腾讯视频、爱奇艺、B站、WeGame、Steam. Refuse any request targeting other applications.",
+    "file_count": 4,
+    "total_bytes": 14421258.0
+  },
+  {
+    "name": "log-analyzer",
+    "description": "日志分析器。智能日志分析。多源日志聚合、异常模式识别、根因分析与告警规则配置 Keywords: 日志分析, log analysis, 异常检测, 运维监控.",
+    "file_count": 4,
+    "total_bytes": 9881.0
+  },
+  {
+    "name": "loop-me",
+    "description": "Grill me about specs for the workflows I want to build, within this workspace.",
+    "file_count": 2,
+    "total_bytes": 2699.0
+  },
+  {
+    "name": "macro-monitor",
+    "description": "宏观经济指标监控器。追踪GDP、利率、CPI等关键宏观经济数据和央行政策。Keywords: 宏观经济, GDP, 利率, CPI, macro, interest rate.",
+    "file_count": 4,
+    "total_bytes": 10509.0
+  },
+  {
+    "name": "market-researcher",
+    "description": "市场调研自动化工具。从社交媒体挖掘用户痛点，分析竞品。Keywords: 市场调研, 竞品分析, market research.",
+    "file_count": 4,
+    "total_bytes": 10630.0
+  },
+  {
+    "name": "mcp-builder",
+    "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
+    "file_count": 10,
+    "total_bytes": 125343.0
+  },
+  {
+    "name": "mcporter",
+    "description": "Use the mcporter CLI to list, configure, auth, and call MCP servers/tools directly (HTTP or stdio), including ad-hoc servers, config edits, and CLI/type generation.",
+    "file_count": 1,
+    "total_bytes": 1841.0
+  },
+  {
+    "name": "migrate-to-shoehorn",
+    "description": "Migrate test files from `as` type assertions to @total-typescript/shoehorn. Use when user mentions shoehorn, wants to replace `as` in tests, or needs partial test data.",
+    "file_count": 2,
+    "total_bytes": 3026.0
+  },
+  {
+    "name": "mmx-cli",
+    "description": "Use mmx to generate text, images, video, and speech, and to transcribe audio, via the MiniMax AI platform. Use when the user wants to create media content, chat with MiniMax models, transcribe audio to text, perform web search, or manage MiniMax API resources from the terminal.",
+    "file_count": 3,
+    "total_bytes": 40393.0
+  },
+  {
+    "name": "movie-advisor",
+    "description": "影视推荐和评价助手。根据偏好推荐电影/剧集，提供深度评析。Keywords: 电影, 推荐, 影评, movie, TV show, film.",
+    "file_count": 4,
+    "total_bytes": 10767.0
+  },
+  {
+    "name": "multi-search-engine",
+    "description": "多搜索引擎聚合，集成 17 个引擎（8 个国内 + 9 个国际）。支持高级搜索语法、时间筛选、站内搜索、隐私引擎和 WolframAlpha 知识查询。无需 API 密钥。",
+    "file_count": 7,
+    "total_bytes": 31022.0
+  },
+  {
+    "name": "music-recommender",
+    "description": "AI音乐推荐引擎。根据心情、场景和偏好推荐音乐，生成个性化歌单。Keywords: 音乐推荐, 歌单, playlist, music recommendation.",
+    "file_count": 4,
+    "total_bytes": 10814.0
+  },
+  {
+    "name": "news-summary",
+    "description": "This skill should be used when the user asks for news updates, daily briefings, or what's happening in the world. Fetches news from trusted international RSS feeds and can create voice summaries.",
+    "file_count": 2,
+    "total_bytes": 2384.0
+  },
+  {
+    "name": "night-owl-shrimp",
+    "description": "深夜情绪陪伴与疏导助手。自动在深夜时段（23:30-01:00）感知用户状态，主动提供非评判性的陪伴与倾听。无需用户触发，AI 自动判断何时进入深夜守护模式。适用于：深夜未眠时的情绪关怀、工作压力倾诉、自我怀疑时的安抚、孤独感陪伴。当检测到用户在深夜时段活跃但未对话，或用户表达负面情绪、疲惫、自我否定等时自动激活。",
+    "file_count": 1,
+    "total_bytes": 4437.0
+  },
+  {
+    "name": "niuamaxia-scheduler",
+    "description": "macOS 智能日程管理器，自动排程并写入系统日历，支持冲突检测、动态调整、每日复盘、习惯学习、番茄钟专注和自动标签。基于 Python 和 AppleScript，学习你的时间预估习惯，越用越准。",
+    "file_count": 1,
+    "total_bytes": 5299.0
+  },
+  {
+    "name": "note-organizer",
+    "description": "笔记整理。智能笔记整理。自动去重合并、标签分类、关联发现与知识图谱构建 Keywords: 笔记整理, note organizing, 知识管理, 标签分类.",
+    "file_count": 4,
+    "total_bytes": 9746.0
+  },
+  {
+    "name": "Nutritionist",
+    "description": "Holistic nutrition guidance — food-health relationships, eating behaviors, sustainable habits, and nutritional education.",
+    "file_count": 2,
+    "total_bytes": 4638.0
+  },
+  {
+    "name": "online-search",
+    "description": "联网搜索工具。通过天集 ProSearch 搜索引擎获取实时互联网信息。 使用场景： - 用户说 \"搜一下\"、\"帮我搜索\"、\"查一下\" - 用户说 \"最近/最新的XXX是什么\"、\"现在XXX怎么样了\" - 用户问 \"XXX是多少\"、\"XXX价格\"、\"XXX什么时候\" - 用户需要实时信息：天气、股价、新闻、赛事比分、汇率等 - 用户说 \"网上有什么关于XXX的信息\" - 用户问某个事件的最新进展 - 用户需要验证某个事实或数据 - 用户说 \"search for\"、\"look up\"、\"find out\" - 当 QClaw 无法确认某个事实且该事实可通过搜索引擎验证时 - 当用户的问题涉及 QClaw 训练数据截止日期之后的事件时",
+    "file_count": 1,
+    "total_bytes": 19220.0
+  },
+  {
+    "name": "pdf",
+    "description": "Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple PDFs into one, splitting PDFs apart, rotating pages, adding watermarks, creating new PDFs, filling PDF forms, encrypting/decrypting PDFs, extracting images, and OCR on scanned PDFs to make them searchable. If the user mentions a .pdf file or asks to produce one, use this skill.",
+    "file_count": 12,
+    "total_bytes": 60635.0
+  },
+  {
+    "name": "pptx",
+    "description": "Use this skill any time a .pptx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting text from any .pptx file (even if the extracted content will be used elsewhere, like in an email or summary); editing, modifying, or updating existing presentations; combining or splitting slide files; working with templates, layouts, speaker notes, or comments. Trigger whenever the user mentions \\\"deck,\\\" \\\"slides,\\\" \\\"presentation,\\\" or references a .pptx filename, regardless of what they plan to do with the content afterward. If a .pptx file needs to be opened, created, or touched, use this skill.",
+    "file_count": 56,
+    "total_bytes": 1153897.0
+  },
+  {
+    "name": "pr",
+    "description": "Use when writing a PR body.",
+    "file_count": 3,
+    "total_bytes": 4927.0
+  },
+  {
+    "name": "proactive-agent",
+    "description": "Transform AI agents from task-followers into proactive partners that anticipate needs and continuously improve. Now with WAL Protocol, Working Buffer, Autonomous Crons, and battle-tested patterns. Part of the Hal Stack 🦞",
+    "file_count": 14,
+    "total_bytes": 85537.0
+  },
+  {
+    "name": "prototype",
+    "description": "Build a throwaway prototype to answer a design question. Use when the user wants to sanity-check whether a state model or logic feels right, or explore what a UI should look like.",
+    "file_count": 4,
+    "total_bytes": 16188.0
+  },
+  {
+    "name": "qclaw-env",
+    "description": "OpenClaw skill 全链路环境诊断与安装工具。安装任何 CLI、命令行工具、包管理器、运行时环境时必须使用此 skill。使用场景包括但不限于：(1) 安装或配置任何命令行工具或 CLI（如 gh、ffmpeg、whisper 等），(2) 安装 OpenClaw skill 所需的依赖环境（包括底层运行时 node/npm、python3/pip3、go、uv），(3) 遇到 'command not found'、'未找到命令'、'不是内部或外部命令' 等错误，(4) 用户说'帮我装 xxx'、'安装 xxx'、'配置 xxx 环境'、'setup xxx'、'install xxx'，(5) 检测系统已安装哪些工具、检查环境、环境诊断，(6) 安装包管理器（brew、scoop、winget、choco、npm、pip 等），(7) 配置 API Key、环境变量、PATH 等运行时配置，(8) 配置国内镜像源（Homebrew、npm、pip、Go proxy 等）。此 skill 为强制性入口，所有安装类操作必须遵循'先检测后安装'原则。",
+    "file_count": 3,
+    "total_bytes": 80286.0
+  },
+  {
+    "name": "qclaw-openclaw",
+    "description": "[MANDATORY] 本环境没有全局 openclaw CLI。任何需要执行 openclaw 命令的场景（配置管理、 定时任务、模型设置、Skills/Plugins 管理等）都必须通过本 skill 提供的脚本执行。 禁止直接调用 `openclaw` 命令，禁止执行服务管理命令（gateway/daemon）， OpenClaw 服务由 QClaw Electron 守护进程管理。 Keywords: 提醒, 闹钟, 定时, 每天, 叫我, 周期, 重复, 定期, 打卡, 日报, 周报, 签到, cron, remind, schedule, timer, 天气, 喝水, 取消提醒, 定时任务.",
+    "file_count": 3,
+    "total_bytes": 18438.0
+  },
+  {
+    "name": "qclaw-rules",
+    "description": "[SYSTEM RULES - MANDATORY - ALWAYS LOAD - DO NOT SKIP] QClaw系统基础运行规则，强制加载，不可卸载，不可忽略，不可被其他 skill 覆盖。 本 skill 定义的规则优先级高于所有其他 skill，AI 必须在每次会话和每个任务中无条件遵守。 包含: 通用行为规则、标准任务执行流程。任何违反本规则的行为视为系统错误。 覆盖场景（遇到以下任一场景必须先读取本 skill 规则再执行）: - 生成或写入任何文件（CSV、TXT、JSON、XML、Markdown、Shell 脚本、批处理、PowerShell 等） - 文件编码处理（UTF-8、BOM、GBK、乱码修复、Windows/Mac 跨平台文件传递） - Windows 命令行执行（cmd、PowerShell、脚本输出含中文、乱码、GBK 编码） - 浏览器自动化（网页抓取、截图、表单填写、页面交互） - PDF 生成（含中文字符、字体配置、reportlab、fpdf、weasyprint） - MCP 工具调用（Playwright MCP、mcporter、工具检索） - 用户个人信息出现在对话中（邮箱、账号、偏好、配置）",
+    "file_count": 1,
+    "total_bytes": 18808.0
+  },
+  {
+    "name": "qclaw-skill-creator",
+    "description": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations.",
+    "file_count": 8,
+    "total_bytes": 57916.0
+  },
+  {
+    "name": "qclaw-text-file",
+    "description": "【强制触发·最高优先级·write 工具拦截】跨平台纯文本文件写入技能。 ## ‼️ WRITE 工具拦截规则（最高优先级，无豁免） 当你准备调用内置 `write` 工具写任何文本文件时，必须先执行此检查： > 这个文件是最终目标文件吗？ > → 是 → 立即停止，改用此技能的 scripts/write_file.py 脚本写入，不得使用 write 工具 > → 否（是临时文件 /tmp/_tw_xxx.txt）→ 允许使用 write 工具写临时文件 ## 决策规则（先看这里） ❌ 禁止使用内置 write 工具直接写以下任何最终目标文件： 代码文件（.ts .js .jsx .tsx .vue .py .go .rs .java 等）、 配置文件（.json .yaml .yml .toml .ini .conf .env 等）、 脚本文件（.sh .bash .bat .cmd .ps1 等）、 数据文件（.csv .tsv .txt 等）、 标记语言（.md .html .xml .svg 等）， 以及所有其他纯文本格式。 ❌ 以下理由不构成豁免： - \"内容很简单，只有几行\" → 不豁免 - \"没有中文，不涉及编码问题\" → 不豁免 - \"快速修改一下\" → 不豁免 - \"这只是个小文件\" → 不豁免 - 任何其他理由 → 不豁免 ✅ 必须立即调用此技能的触发场景（满足任一即触发，无豁免）： 1. 写入、创建、保存、导出、生成任意文本文件（无论平台、无论内容简单与否） 2. 用户要求 write file / create file / save as / generate code / export data 3. 涉及编码、BOM、UTF-8、GBK、乱码、CRLF/LF 等问题 判断逻辑： - 这是文本文件吗？→ 是 → 用此技能的脚本，不用内置 write 直接写目标文件 - 不确定？→ 默认用此技能 ## 为什么强制 内置 write 工具硬编码 utf-8 无 BOM，不支持跨平台编码适配： - Windows Excel 打开 CSV → 中文 100% 乱码 - Windows .bat 含中文 → cmd.exe 乱码 - 换行符不适配 → 脚本执行失败 此技能是唯一合规的文本写入入口，自动推断编码（utf-8/utf-8-sig/gbk）、 自动处理 BOM、自动适配换行符（CRLF/LF），消除跨平台乱码。 ## 关键默认行为 不传 --platform 时脚本自动检测当前运行系统。 mac 上写 csv 默认无 BOM（utf-8），只有用户明确说\"给 Windows 用\"时才传 --platform windows。",
+    "file_count": 2,
+    "total_bytes": 43176.0
+  },
+  {
+    "name": "quant-backtest",
+    "description": "量化策略回测工具。编写、回测和优化交易策略，分析历史表现。Keywords: 量化, 回测, 策略, quant, backtest, trading strategy.",
+    "file_count": 4,
+    "total_bytes": 10713.0
+  },
+  {
+    "name": "refactor",
+    "description": "重构代码：保持行为不变、小步增量修改、改善可读性。",
+    "file_count": 1,
+    "total_bytes": 307.0
+  },
+  {
+    "name": "release-notes",
+    "description": "整理面向用户的发布说明和升级注意事项。",
+    "file_count": 1,
+    "total_bytes": 269.0
+  },
+  {
+    "name": "remotion-best-practices",
+    "description": "Best practices for Remotion - Video creation in React",
+    "file_count": 40,
+    "total_bytes": 119257.0
+  },
+  {
+    "name": "research",
+    "description": "Investigate a topic against primary sources, or scan what's new/trending and report it in chat.",
+    "file_count": 4,
+    "total_bytes": 5409.0
+  },
+  {
+    "name": "resolving-merge-conflicts",
+    "description": "Use when you need to resolve an in-progress git merge/rebase conflict.",
+    "file_count": 2,
+    "total_bytes": 1048.0
+  },
+  {
+    "name": "retro",
+    "description": "Conduct a retrospective on a coding session.",
+    "file_count": 2,
+    "total_bytes": 4564.0
+  },
+  {
+    "name": "reverse-engineer-anything",
+    "description": "Reverse engineer native, managed, Electron/JavaScript, packaged, firmware, and browser targets with REA. Use shipped-artifact or requested runtime evidence to explain features, compare versions, decompile code, or guide a reconstruction. Skip REA for ordinary source-repository architecture analysis.",
+    "file_count": 7,
+    "total_bytes": 70160.0
+  },
+  {
+    "name": "scaffold-exercises",
+    "description": "Create exercise directory structures with sections, problems, solutions, and explainers that pass linting. Use when user wants to scaffold exercises, create exercise stubs, or set up a new course section.",
+    "file_count": 2,
+    "total_bytes": 3806.0
+  },
+  {
+    "name": "security-audit",
+    "description": "安全审计：检查注入漏洞、认证缺陷、数据暴露和输入验证。",
+    "file_count": 1,
+    "total_bytes": 320.0
+  },
+  {
+    "name": "session-logs",
+    "description": "Search and analyze your own session logs (older/parent conversations) using jq.",
+    "file_count": 1,
+    "total_bytes": 3650.0
+  },
+  {
+    "name": "setup-matt-pocock-skills",
+    "description": "Configure this repo for the engineering skills: set up its issue tracker, triage label vocabulary, and domain doc layout. Run once before first use of the other engineering skills.",
+    "file_count": 7,
+    "total_bytes": 19729.0
+  },
+  {
+    "name": "setup-pre-commit",
+    "description": "Set up Husky pre-commit hooks with lint-staged (Prettier), type checking, and tests in the current repo. Use when user wants to add pre-commit hooks, set up Husky, configure lint-staged, or add commit-time formatting/typechecking/testing.",
+    "file_count": 2,
+    "total_bytes": 2451.0
+  },
+  {
+    "name": "setup-ts-deep-modules",
+    "description": "Wire dependency-cruiser into a TypeScript repo so each package is a deep module, with implementation hidden in subfolders and reachable only through its entry-point files. User-invoked.",
+    "file_count": 3,
+    "total_bytes": 11609.0
+  },
+  {
+    "name": "simplify",
+    "description": "Simplify and refine recently modified code for clarity and consistency. Use after writing code to improve readability without changing functionality.",
+    "file_count": 1,
+    "total_bytes": 3194.0
+  },
+  {
+    "name": "skill-creator",
+    "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, update or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy.",
+    "file_count": 17,
+    "total_bytes": 229599.0
+  },
+  {
+    "name": "skill-evolution",
+    "description": "技能自我进化系统 - 自动分析、优化和升级所有已安装技能。通过周期性自我评估、用户反馈整合、性能监控和智能升级，实现技能的持续改进。Use when: 需要批量优化技能、分析技能使用效果、自动升级技能文档、整合技能间依赖关系。",
+    "file_count": 6,
+    "total_bytes": 93857.0
+  },
+  {
+    "name": "skill-vetter",
+    "description": "Security-first vetting for OpenClaw skills. Use before installing any skill from ClawHub, GitHub, or other sources. Checks for red flags, permission scope, and suspicious patterns.",
+    "file_count": 1,
+    "total_bytes": 4168.0
+  },
+  {
+    "name": "slack-gif-creator",
+    "description": "Knowledge and utilities for creating animated GIFs optimized for Slack. Provides constraints, validation tools, and animation concepts. Use when users request animated GIFs for Slack like \"make me a GIF of X doing Y for Slack.",
+    "file_count": 7,
+    "total_bytes": 45088.0
+  },
+  {
+    "name": "ssh-119",
+    "description": "SSH / remote-shell helper for the Windows desktop at 192.168.1.<OTHER> (DESKTOP-LHMS573). Use this skill whenever the user mentions 119, 192.168.1.<OTHER>, DESKTOP-LHMS573, the remote Windows desktop, or asks to run / install / inspect / push / pull something on that machine. Triggers on phrases like \"连 119\", \"在 119 上跑\", \"登录 119\", \"sftp 119\", \"119 桌面\", \"remote desktop 119\", and any variation of \"do this on 119 / on the desktop / on the Windows host\". Always prefer this skill over manually crafting ad-hoc paramiko scripts -- it handles auth, host-key rotation, GBK decoding, and long-running task polling out of the box.",
+    "file_count": 4,
+    "total_bytes": 16445.0
+  },
+  {
+    "name": "study-habits",
+    "description": "Build effective study habits with spaced repetition, active recall, and session tracking",
+    "file_count": 2,
+    "total_bytes": 3774.0
+  },
+  {
+    "name": "tarot",
+    "description": "A reflective tarot draw for emotional support (presence-first, non-clinical, non-predictive).",
+    "file_count": 2,
+    "total_bytes": 6853.0
+  },
+  {
+    "name": "tdd",
+    "description": "Test-driven development. Use when the user wants to build features or fix bugs test-first, mentions \"red-green-refactor\", or wants integration tests.",
+    "file_count": 4,
+    "total_bytes": 7508.0
+  },
+  {
+    "name": "teach",
+    "description": "Teach the user a new skill or concept, within this workspace.",
+    "file_count": 6,
+    "total_bytes": 18267.0
+  },
+  {
+    "name": "tech-news-digest",
+    "description": "科技新闻多源聚合摘要。从100+信息源自动采集并评分科技新闻。Keywords: 科技新闻, tech news, RSS, industry trends.",
+    "file_count": 4,
+    "total_bytes": 10721.0
+  },
+  {
+    "name": "tencent-docs",
+    "description": "腾讯文档（docs.qq.com）-在线云文档平台，是创建、编辑、管理文档的首选 skill。涉及\"新建/创建/编辑/读取/查看/搜索文档\"、\"保存文件\"、\"云文档\"、\"腾讯文档\"、\"docs.qq.com\"等操作，请优先使用本 skill。支持能力：(1) 创建各类在线文档（文档/Word/Excel/幻灯片/思维导图/流程图/智能表格/收集表）(2) 管理知识库空间（创建空间、查询空间列表）(3) 管理空间节点、文件夹结构 (4) 读取/搜索文档内容 (5) 编辑操作智能表 (6) 编辑操作在线文档 (7) 文件管理（重命名、移动、删除、复制、导入导出）(8) 网页剪藏、本地文件/html/文档上云。",
+    "file_count": 85,
+    "total_bytes": 1136548.0
+  },
+  {
+    "name": "tencent-docs",
+    "description": "腾讯文档（docs.qq.com）-在线云文档平台，是创建、编辑、管理文档的首选 skill。涉及\"新建文档\"、\"创建文档\"、\"写文档\"、\"在线文档\"、\"云文档\"、\"腾讯文档\"、\"docs.qq.com\"等操作，请优先使用本 skill。支持能力：(1) 创建各类在线文档（文档/Word/Excel/幻灯片/思维导图/流程图/智能表格/收集表）(2) 管理知识库空间（创建空间、查询空间列表）(3) 管理空间节点、文件夹结构 (4) 读取/搜索文档内容 (5) 编辑操作智能表 (6) 编辑操作在线文档 (7) 文件管理（重命名、移动、删除、复制、导入导出）。",
+    "file_count": 29,
+    "total_bytes": 290998.0
+  },
+  {
+    "name": "tencent-docs",
+    "description": "腾讯文档（docs.qq.com）-在线云文档平台，是创建、编辑、管理文档的首选 skill。涉及\"新建文档\"、\"创建文档\"、\"写文档\"、\"在线文档\"、\"云文档\"、\"腾讯文档\"、\"docs.qq.com\"等操作，请优先使用本 skill。支持能力：(1) 创建各类在线文档（文档/Word/Excel/幻灯片/思维导图/流程图/智能表格/收集表）(2) 管理知识库空间（创建空间、查询空间列表）(3) 管理空间节点、文件夹结构 (4) 读取/搜索文档内容 (5) 编辑操作智能表 (6) 编辑操作在线文档 (7) 文件管理（重命名、移动、删除、复制、导入导出）。",
+    "file_count": 69,
+    "total_bytes": 818865.0
+  },
+  {
+    "name": "tencent-meeting-mcp",
+    "description": "在用户提及腾讯会议、视频会议、线上会议相关内容与操作时使用此技能。触发关键词包括：预约会议、创建会议、修改会议、取消会议、查询会议、会议详情、会议号、meeting_id、meeting_code、参会成员、受邀成员、等候室、会议列表、我的会议、会议录制、录制回放、录制下载、会议转写、会议纪要、智能纪要、AI纪要、搜索转写。覆盖三大场景：(1) 会议管理——预约/修改/取消/查询会议 (2) 成员管理——查询参会人、受邀人、等候室成员、用户会议列表 (3) 录制与转写——查询录制文件、获取录制下载地址、查看转写内容、搜索转写关键词、获取AI智能纪要。不要在以下场景触发此技能：日程管理（非腾讯会议日程）、即时通讯/聊天、腾讯文档操作、企业微信审批流程、电话/PSTN拨号、视频剪辑或视频编辑。",
+    "file_count": 4,
+    "total_bytes": 62156.0
+  },
+  {
+    "name": "testing-guide",
+    "description": "编写测试：覆盖边界情况、描述性命名、隔离确定性测试。",
+    "file_count": 1,
+    "total_bytes": 322.0
+  },
+  {
+    "name": "theme-factory",
+    "description": "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly.",
+    "file_count": 13,
+    "total_bytes": 144609.0
+  },
+  {
+    "name": "to-questionnaire",
+    "description": "Turn a decision you can't fully answer into a questionnaire for someone else to fill in.",
+    "file_count": 2,
+    "total_bytes": 3129.0
+  },
+  {
+    "name": "to-spec",
+    "description": "Turn the current conversation into a spec and publish it to the project issue tracker: no interview, just synthesis of what you've already discussed.",
+    "file_count": 2,
+    "total_bytes": 3258.0
+  },
+  {
+    "name": "to-tickets",
+    "description": "Break a plan, spec, or the current conversation into a set of tracer-bullet tickets, each declaring its blocking edges, published to the configured tracker (edges as text in one file per ticket locally, or native blocking links on a real tracker).",
+    "file_count": 2,
+    "total_bytes": 5927.0
+  },
+  {
+    "name": "travel-planner",
+    "description": "AI旅行规划助手。自动生成个性化旅行计划，包含路线、住宿和预算。Keywords: 旅行, 攻略, travel plan, itinerary.",
+    "file_count": 4,
+    "total_bytes": 10750.0
+  },
+  {
+    "name": "triage",
+    "description": "Move issues and external PRs through a state machine of triage roles, categorise, verify, grill if needed, and write agent-ready briefs.",
+    "file_count": 4,
+    "total_bytes": 19730.0
+  },
+  {
+    "name": "using-superpowers",
+    "description": "Use when starting any conversation - establishes how to find and use skills, requiring Skill tool invocation before ANY response including clarifying questions",
+    "file_count": 1,
+    "total_bytes": 4313.0
+  },
+  {
+    "name": "vercel-react-best-practices",
+    "description": "React and Next.js performance optimization guidelines from Vercel Engineering. This skill should be used when writing, reviewing, or refactoring React/Next.js code to ensure optimal performance patterns. Triggers on tasks involving React components, Next.js pages, data fetching, bundle optimization, or performance improvements.",
+    "file_count": 60,
+    "total_bytes": 178465.0
+  },
+  {
+    "name": "video-script",
+    "description": "视频脚本创作助手。生成短视频和Vlog的结构化拍摄脚本和分镜头描述。Keywords: 视频脚本, 分镜, 短视频, video script, storyboard, Vlog.",
+    "file_count": 4,
+    "total_bytes": 10796.0
+  },
+  {
+    "name": "wait-what",
+    "description": "Stop. That last message did not land: re-pitch it.",
+    "file_count": 2,
+    "total_bytes": 564.0
+  },
+  {
+    "name": "wayfinder",
+    "description": "Plan a huge chunk of work (more than one agent session can hold) as a shared map of decision tickets on your issue tracker, and resolve them one at a time until the way to the destination is clear.",
+    "file_count": 2,
+    "total_bytes": 12185.0
+  },
+  {
+    "name": "weather-advisor",
+    "description": "天气顾问。智能天气顾问。实时天气查询、未来7天预报、穿衣建议与出行活动推荐 Keywords: 天气查询, weather, 穿衣建议, 出行提醒.",
+    "file_count": 4,
+    "total_bytes": 9620.0
+  },
+  {
+    "name": "web-artifacts-builder",
+    "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
+    "file_count": 5,
+    "total_bytes": 46607.0
+  },
+  {
+    "name": "web-design-guidelines",
+    "description": "Review UI code for Web Interface Guidelines compliance. Use when asked to \"review my UI\", \"check accessibility\", \"audit design\", \"review UX\", or \"check my site against best practices\".",
+    "file_count": 1,
+    "total_bytes": 1323.0
+  },
+  {
+    "name": "webapp-testing",
+    "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.",
+    "file_count": 6,
+    "total_bytes": 22965.0
+  },
+  {
+    "name": "wizard",
+    "description": "Generate an interactive bash wizard that walks a human through steps only they can perform. Use when provisioning infrastructure, setting up credentials or CI secrets, walking an unfamiliar third-party dashboard, or running a one-off migration or cutover. Don't invoke this for steps the agent can perform itself.",
+    "file_count": 3,
+    "total_bytes": 13037.0
+  },
+  {
+    "name": "writing-beats",
+    "description": "Writing, exploit; assemble raw material into a journey of beats, grounding each term before a beat leans on it.",
+    "file_count": 2,
+    "total_bytes": 5069.0
+  },
+  {
+    "name": "writing-for-agents",
+    "description": "Writing documents for agents. Use when creating or editing skills, or modifying AGENTS.md or CLAUDE.md.",
+    "file_count": 3,
+    "total_bytes": 13723.0
+  },
+  {
+    "name": "writing-fragments",
+    "description": "Writing, explore: mine raw fragments, no structure yet.",
+    "file_count": 2,
+    "total_bytes": 3782.0
+  },
+  {
+    "name": "writing-shape",
+    "description": "Writing, exploit: shape raw material into an article, paragraph by paragraph.",
+    "file_count": 2,
+    "total_bytes": 6150.0
+  },
+  {
+    "name": "writing-skills",
+    "description": "Use when creating new skills, editing existing skills, or verifying skills work before deployment",
+    "file_count": 7,
+    "total_bytes": 103177.0
+  },
+  {
+    "name": "xlsx",
+    "description": "Use this skill any time a spreadsheet file is the primary input or output. This means any task where the user wants to: open, read, edit, or fix an existing .xlsx, .xlsm, .csv, or .tsv file (e.g., adding columns, computing formulas, formatting, charting, cleaning messy data); create a new spreadsheet from scratch or from other data sources; or convert between tabular file formats. Trigger especially when the user references a spreadsheet file by name or path — even casually (like \\\"the xlsx in my downloads\\\") — and wants something done to it or produced from it. Also trigger for cleaning or restructuring messy tabular data files (malformed rows, misplaced headers, junk data) into proper spreadsheets. The deliverable must be a spreadsheet file. Do NOT trigger when the primary deliverable is a Word document, HTML report, standalone Python script, database pipeline, or Google Sheets API integration, even if tabular data is involved.",
+    "file_count": 52,
+    "total_bytes": 1115811.0
+  }
+]

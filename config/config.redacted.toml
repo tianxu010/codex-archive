@@ -1,0 +1,361 @@
+# ARCHIVED REDACTED COPY of ~/.codex/config.toml
+# Secret values replaced with ***REDACTED*** before publishing.
+# Do not edit here; re-export from the local machine to refresh.
+model = "MiniMax-M3.1-Flash-Preview"
+model_provider = "minimax"
+model_context_window = 1000000
+model_catalog_json = "C:/Users/tianx/.codex/model-catalogs/custom-catalog.json"
+
+personality = "pragmatic"
+approval_policy = "never"
+sandbox_mode = "danger-full-access"
+preferred_auth_method = "apikey"
+forced_login_method = "api"
+model_reasoning_effort = "high"
+
+
+notify = [ "C:\\Users\\tianx\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\78fb63cda1a9e2b2\\bin\\node_modules\\@oai\\sky\\bin\\windows\\codex-computer-use.exe", "turn-ended" ]
+[model_providers.minimax]
+name = "MiniMax"
+base_url = "https://api.minimaxi.com/v1"
+experimental_bearer_token = "***REDACTED***"
+wire_api = "responses"
+
+[windows]
+sandbox = 'unelevated'
+[projects.'c:\users\tianx\documents\codex\2026-06-18\new-chat-3']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-06-19\start-the-gateway-service-y-n']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-06-19\skill']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-06-19\glm-codex']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-06-20\plugin-creator-c-users-tianx-codex']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-06-20\plugin-creator-c-users-tianx-codex-2']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-06-20\re']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-06-21\c-users-tianx-hermes-update-updating']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-06-22\remotion-plugin-remotion-openai-api-curated']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-06-24\c-users-tianx-hermes-c-users']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-06-25\bytedance-ui-tars-desktop-https-github']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-06-26\computer-use']
+trust_level = "trusted"
+
+
+
+[projects.'c:\users\tianx\documents\codex\2026-07-17\new-chat']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-07-19\ke']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-07-19\new-chat']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-07-24\new-chat-2']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-07-24\new-chat-3']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-07-24\new-chat-4']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-07-24\plugin-creator-c-users-tianx-codex']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-07-25\we']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-07-25\ne']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-07-30\ni']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-04\new-chat']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-07\new-chat']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-07\new-chat-2']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-07\new-chat-3']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-07\new-chat-4']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-08\new-chat']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-08\ji']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-10\ka']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-11\sha']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-12\plugin-computer-use-personal']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-12\plugin-computer-use-personal-2']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-12\computer-use-plugin-computer-use-personal']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-12\plugin-computer-use-openai-bundled-play']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-12\computer-use-computer-use-c-users']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-12\c']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-12\ya']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-12\computer-use-plugin-computer-use-openai']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-12\plugin-creator-c-users-tianx-codex']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-12\github-cli-github-cli-gh-is']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-12\plugin-computer-use-openai-bundled']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-12\plugin-computer-use-openai-bundled-2']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-12\ps-codex-plugin-ps-codex-personal']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-13\harness-harness-hermes-https-xie-infoq']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-15\npx-deepseek-ai-dsh-web']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-16\p']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-16\npx-deepseek-ai-dsh-web']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-21\ps-codex-plugin-ps-codex-personal']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-21\ps-codex-plugin-ps-codex-personal-2']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-21\ps-codex-plugin-ps-codex-personal-3']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-22\ps-codex-plugin-ps-codex-personal']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-22\ps-codex-plugin-ps-codex-personal-2']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-24\ps-codex-plugin-ps-codex-personal']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-24\ps-codex-plugin-ps-codex-personal-2']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-24\ps-codex-plugin-ps-codex-personal-3']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-24\ps-codex-plugin-ps-codex-personal-4']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-24\ps-codex-plugin-ps-codex-personal-5']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-25\ps-codex-plugin-ps-codex-personal']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-08-27\ps-codex-plugin-ps-codex-personal']
+trust_level = "trusted"
+
+[projects.'c:\users\tianx\documents\codex\2026-09-03\w']
+trust_level = "trusted"
+
+[projects.'d:\智能团队']
+trust_level = "trusted"
+
+[features]
+js_repl = false
+
+[plugins."remotion@openai-api-curated"]
+enabled = true
+
+[plugins."life-science-research@openai-api-curated"]
+enabled = true
+
+#[plugins."figma@openai-api-curated"]
+#enabled = false
+
+[plugins."ngs-analysis@openai-api-curated"]
+enabled = true
+
+[plugins."boltz-api-cli@openai-api-curated"]
+enabled = true
+
+#[plugins."linear@openai-api-curated"]
+#enabled = false
+
+[plugins."codex-security@openai-api-curated"]
+enabled = true
+
+[plugins."hyperframes@openai-api-curated"]
+enabled = true
+
+[plugins."superpowers@openai-api-curated"]
+enabled = true
+
+[plugins."circleci@openai-api-curated"]
+enabled = true
+
+[plugins."sentry@openai-api-curated"]
+enabled = true
+
+[plugins."mixpanel-headless@openai-api-curated"]
+enabled = true
+
+#[plugins."notion@openai-api-curated"]
+#enabled = false
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."pdf@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."template-creator@openai-primary-runtime"]
+enabled = true
+
+[desktop]
+followUpQueueMode = "queue"
+localeOverride = "zh-CN"
+conversationDetailMode = "STEPS_COMMANDS"
+
+[marketplaces.openai-primary-runtime]
+source_type = "local"
+source = '\\?\C:\Users\tianx\.cache\codex-runtimes\codex-primary-runtime\plugins\openai-primary-runtime'
+
+[apps.connector_openai_codex_document_control]
+enabled = false
+
+[shell_environment_policy.set]
+
+[mcp_servers.node_repl]
+command = 'C:\Users\tianx\AppData\Local\OpenAI\Codex\runtimes\cua_node\78fb63cda1a9e2b2\bin\node_repl.exe'
+env_vars = ["CODEX_WINDOWS_REGISTERED_CORE"]
+startup_timeout_sec = 120.0
+
+[mcp_servers.node_repl.env]
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab,mcpapps"
+BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+BROWSER_USE_CODEX_APP_VERSION = "26.1013.40934"
+BROWSER_USE_TINYSKY_ENABLED = "1"
+CODEX_CLI_PATH = 'C:\Users\tianx\AppData\Local\OpenAI\Codex\bin\896a0166b774037a\codex.exe'
+CODEX_HOME = 'C:\Users\tianx\.codex'
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
+NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+NODE_REPL_NODE_MODULE_DIRS = 'C:\Users\tianx\AppData\Local\OpenAI\Codex\runtimes\cua_node\78fb63cda1a9e2b2\bin\node_modules'
+NODE_REPL_NODE_PATH = 'C:\Users\tianx\AppData\Local\OpenAI\Codex\runtimes\cua_node\78fb63cda1a9e2b2\bin\node.exe'
+NODE_REPL_TRUSTED_CODE_PATHS = 'C:\Users\tianx\.codex;C:\Users\tianx\AppData\Local\OpenAI\Codex\runtimes\cua_node\78fb63cda1a9e2b2\bin\node_modules'
+NODE_REPL_TRUSTED_SERVICES = '{"browser":"C:/Users/tianx/.codex/plugins/cache/openai-bundled/browser/26.1013.40934/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
+NODE_REPL_UNTRUSTED_ENV_ALLOWLIST = "CODEX_WINDOWS_REGISTERED_CORE"
+SKY_CUA_NATIVE_PIPE = "1"
+SKY_CUA_NATIVE_PIPE_DIRECTORY = '\\.\pipe\codex-computer-use-ef1c5003-43ca-4df5-8487-a9002d63d0a9'
+
+[mcp_servers.cua_repl]
+command = 'C:\Program Files\WindowsApps\OpenAI.Codex_26.1013.4894.0_x64__2p2nqsd0c76g0\app\ChatGPT.exe'
+enabled = false
+
+[mcp_servers.minimax]
+command = 'C:\Users\tianx\.local\bin\uvx.exe'
+args = ["minimax-coding-plan-mcp"]
+startup_timeout_sec = 120.0
+
+[mcp_servers.minimax.env]
+FASTMCP_LOG_LEVEL = "ERROR"
+MINIMAX_API_HOST = "https://api.minimaxi.com"
+MINIMAX_API_KEY = "***REDACTED***"
+UV_DEFAULT_INDEX = "https://pypi.org/simple"
+
+[mcp_servers.rea]
+command = "cmd.exe"
+args = ["/d", "/c", "npx", "-y", "rea-agents@6.5.0", "mcp"]
+startup_timeout_sec = 30.0
+
+[mcp_servers.rea.env]
+GHIDRA_INSTALL_DIR = 'C:\Tools\ghidra_12.1.4_PUBLIC'
+JAVA_HOME = 'C:\Tools\jdk-21.0.12.1+1'
+
+[mcp_servers.windows-mcp]
+command = 'C:\Users\tianx\AppData\Local\hermes\bin\uvx.exe'
+args = ["--python", "3.14.6", "windows-mcp", "serve"]
+
+[mcp_servers.windows-mcp.env]
+WINDOWS_MCP_SCREENSHOT_SCALE = "0.75"
+
+[model_providers.deepseek]
+name = "deepseek"
+base_url = "https://api.deepseek.com/"
+wire_api = "responses"
+experimental_bearer_token = "***REDACTED***"
+
+[marketplaces.openai-bundled]
+last_updated = '2026-08-12T04:52:13Z'
+source = '\\?\C:\Users\tianx\.codex\marketplaces\openai-bundled-local'
+source_type = 'local'
+
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[plugins."chrome@openai-bundled"]
+enabled = true
+
+[plugins."ps-codex@personal"]
+enabled = true
+

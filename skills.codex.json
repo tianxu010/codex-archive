@@ -1,0 +1,200 @@
+[
+  {
+    "dir": "_shared",
+    "name": "_shared",
+    "description": "",
+    "file_count": 12,
+    "total_bytes": 100206.0,
+    "has_scripts": false,
+    "has_references": false
+  },
+  {
+    "dir": "功放",
+    "name": "功放",
+    "description": "控制 Yamaha TSR-700 AV 接收机的 Skill。 触发条件：用户说\"功放\"、\"AV功放\"、\"雅马哈功放\"，或任何与功放控制相关的请求。 自动记忆设备 IP（192.168.1.<YAMAHA>）和 API 端点（YamahaExtendedControl/v1）。 支持功能： - 电源控制：开机、待机 - 音量调节：绝对值、相对增减、静音 - 输入源切换：HDMI 1~6、TV、AV1/2、AUX、USB、蓝牙 - 音效场景切换：电影、游戏、音乐、立体声等 - 状态查询：实时读取功放状态 API 格式：GET 请求 + query 参数，无需认证。 基础 URL：http://192.168.1.<YAMAHA>/YamahaExtendedControl/v1",
+    "file_count": 2,
+    "total_bytes": 4408.0,
+    "has_scripts": false,
+    "has_references": false
+  },
+  {
+    "dir": "扫地机器人",
+    "name": "扫地机器人",
+    "description": "控制 Midea M7 扫地机器人（192.168.1.<ROBOT>）的 Skill。 触发条件：用户说\"扫地机器人\"、\"美的M7\"、\"M7\"、\"启动扫地\"、\"停止扫地\"等任何扫地机相关请求。 设备信息： - 设备ID: <DEVICE_ID> - IP: 192.168.1.<ROBOT> - MAC: 54:b8:74:b9:1e:60 - 协议：Midea Aurora v3 LAN protocol - 发现端口: UDP 6445 - 控制端口: TCP 6444 本地密钥：<LOCAL_KEY_32HEX> 注意：扫地机在待机时（充电模式）会关闭网络服务， 必须先物理唤醒（按电源键或清洁键），才能执行控制命令。",
+    "file_count": 2,
+    "total_bytes": 5458.0,
+    "has_scripts": false,
+    "has_references": false
+  },
+  {
+    "dir": "芝杜",
+    "name": "芝杜",
+    "description": "控制 Zidoo Z9 媒体播放器（192.168.1.<ZIDOO>）的 Skill。 触发条件：用户说\"芝杜\"、\"Zidoo\"、\"Z9\"、\"播放器\"，或任何与芝杜控制相关的请求。 自动记忆设备 IP（192.168.1.<ZIDOO>）和 HTTP 控制 API。 支持功能： - 电源控制：PowerOn/PowerOff - 媒体播放：播放/暂停/停止/上下曲/截屏/录制 - 音量控制：音量+/-、静音 - 方向导航：上/下/左/右/OK/Back/Home/Menu - 数字键：0-9 - 应用切换：电影/音乐/图片/文件 - 海报墙浏览：所有电影列表、电影详情 API 格式：HTTP GET + JSONP 请求，无需认证。 基础 URL：http://192.168.1.<ZIDOO>:9529",
+    "file_count": 2,
+    "total_bytes": 6154.0,
+    "has_scripts": false,
+    "has_references": false
+  },
+  {
+    "dir": "brooks-audit",
+    "name": "brooks-audit",
+    "description": "Architecture audit that maps module dependencies, checks layering integrity, and flags structural decay across a codebase, drawing on twelve classic engineering books. Triggers when: user asks to audit architecture, review folder/module structure, check for circular imports, understand how the codebase is organized, or asks \"does this follow clean architecture?\", \"why does everything depend on everything?\", \"are our layers correct?\", \"where should this code live?\". Also triggers for onboarding requests: \"explain this codebase to a new developer\" or \"give me a codebase tour\" (use onboarding mode). Do NOT trigger for: PR-level code review (use brooks-review) or line-level refactoring questions — this skill analyzes structural/module-level concerns, not individual functions.",
+    "file_count": 6,
+    "total_bytes": 28732.0,
+    "has_scripts": false,
+    "has_references": false
+  },
+  {
+    "dir": "brooks-debt",
+    "name": "brooks-debt",
+    "description": "Tech debt assessment that identifies, classifies, and prioritizes maintainability problems — helping teams build a refactoring roadmap — drawing on twelve classic engineering books. Triggers when: user asks about tech debt, refactoring priorities, what to clean up first, or asks \"why is this so hard to change?\", \"where's the most painful part?\", \"what should we fix first?\", \"how do I justify refactoring to management?\", \"why is our velocity dropping?\". Do NOT trigger for: server health checks, HTTP /health endpoints, Kubernetes probes, database health, or application uptime — \"health\" in those contexts is infrastructure, not code quality. Also not for single-function refactoring questions.",
+    "file_count": 4,
+    "total_bytes": 14440.0,
+    "has_scripts": false,
+    "has_references": false
+  },
+  {
+    "dir": "brooks-health",
+    "name": "brooks-health",
+    "description": "Combined codebase health dashboard that scores a project across all four quality dimensions — PR quality, architecture, tech debt, and test quality — in a single pass, drawing on twelve classic engineering books. Triggers when: user wants an overall quality assessment, asks \"how healthy is this codebase?\", \"run all the checks\", \"give me a big-picture quality report\", \"I need a health score before the release\", \"what's the overall state of our code?\", or wants to onboard a new team with a quality overview. Do NOT trigger for: server health checks, HTTP health endpoints, Kubernetes liveness/readiness probes, database health, or application uptime. Also do not trigger when the user specifically requests only one dimension — use the corresponding focused skill instead (brooks-review / brooks-audit / brooks-debt / brooks-test).",
+    "file_count": 4,
+    "total_bytes": 11660.0,
+    "has_scripts": false,
+    "has_references": false
+  },
+  {
+    "dir": "brooks-review",
+    "name": "brooks-review",
+    "description": "PR code review that surfaces decay risks, design smells, and maintainability issues with concrete Symptom → Source → Consequence → Remedy findings, drawing on twelve classic engineering books. Triggers when: user asks to review code, check a PR, shares a diff or pastes code asking \"does this look right?\" / \"any issues here?\" / \"ready to merge?\", or asks for feedback on a function, class, or file. Also triggers when user mentions: code smells / refactoring / clean architecture / DDD / domain-driven design / SOLID principles / Hyrum's Law / deep modules / tactical programming / conceptual integrity / Brooks's Law / Mythical Man-Month / second system effect. Do NOT trigger for: questions about how to write code from scratch, language syntax questions, or framework/tool questions where no existing code is shared.",
+    "file_count": 4,
+    "total_bytes": 17988.0,
+    "has_scripts": false,
+    "has_references": false
+  },
+  {
+    "dir": "brooks-sweep",
+    "name": "brooks-sweep",
+    "description": "Full-sweep mode: runs a unified analysis across all quality dimensions — code decay, architecture, tech debt, and test quality — then applies fixes directly to the codebase. Safe changes are auto-applied; risky changes are confirmed before execution. Drawing on twelve classic engineering books. Triggers when: user wants to \"fix everything\", \"sweep the codebase\", \"auto-fix all issues\", \"run all checks and fix them\", \"clean up the whole project\", or asks for a single command that both diagnoses and remediates quality problems. Do NOT trigger for: read-only audits or health reports where the user only wants findings without code changes; single-dimension reviews (use the focused skill instead: brooks-review / brooks-audit / brooks-debt / brooks-test); server health checks, HTTP /health endpoints, Kubernetes probes, or application uptime.",
+    "file_count": 4,
+    "total_bytes": 30256.0,
+    "has_scripts": false,
+    "has_references": false
+  },
+  {
+    "dir": "brooks-test",
+    "name": "brooks-test",
+    "description": "Test quality review drawing on twelve classic engineering books — with primary focus on xUnit Test Patterns, The Art of Unit Testing, How Google Tests Software, and Working Effectively with Legacy Code — that diagnoses structural problems in an existing test suite: brittleness, mock abuse, coverage illusions, slow execution, poor readability. Triggers when: user asks about test quality, shares test files for review, or expresses frustration: \"tests keep breaking whenever I change anything\", \"our tests take forever\", \"I can't understand what this test is doing\", \"tests pass but bugs still reach production\", \"we have too many mocks\". Do NOT trigger for: writing new tests from scratch (use the regular test-writing workflow) or testing framework/syntax questions — this skill reviews an existing suite for structural quality problems, not individual test authoring.",
+    "file_count": 4,
+    "total_bytes": 16750.0,
+    "has_scripts": false,
+    "has_references": false
+  },
+  {
+    "dir": "browser-automation",
+    "name": "browser-automation",
+    "description": "Use when controlling web pages with the OpenClaw browser tool, especially multi-step flows, login checks, tab management, or recovery from stale refs/timeouts.",
+    "file_count": 2,
+    "total_bytes": 9872.0,
+    "has_scripts": false,
+    "has_references": false
+  },
+  {
+    "dir": "canvas",
+    "name": "canvas",
+    "description": "Present HTML on connected OpenClaw node canvases, navigate/eval/snapshot, and debug canvas host URLs.",
+    "file_count": 2,
+    "total_bytes": 4866.0,
+    "has_scripts": false,
+    "has_references": false
+  },
+  {
+    "dir": "cloudflare-deploy",
+    "name": "cloudflare-deploy",
+    "description": "Deploy applications and infrastructure to Cloudflare using Workers, Pages, and related platform services. Use when the user asks to deploy, host, publish, or set up a project on Cloudflare.",
+    "file_count": 624,
+    "total_bytes": 2790940.0,
+    "has_scripts": false,
+    "has_references": true
+  },
+  {
+    "dir": "codebase-migrate",
+    "name": "codebase-migrate",
+    "description": "Run large codebase migrations and multi-file refactors. Uses the Composio CLI to coordinate issue tracking, batched PRs, and CI verification while the agent executes the transforms locally across hundreds of files.",
+    "file_count": 2,
+    "total_bytes": 10060.0,
+    "has_scripts": false,
+    "has_references": false
+  },
+  {
+    "dir": "codex-windows-fast-patch",
+    "name": "codex-windows-fast-patch",
+    "description": "Reapply and repair Windows Codex Desktop after Store upgrades, including custom provider models hidden by Statsig available_models filtering, the dependent blue-purple Power slider and its Ultra toggle, Fast Mode request/UI gates, locale i18n, plugin UI gates, Chrome/browser_use gates, Goal command gates, Windows Computer Use availability gates and plugin/runtime repair, phone remote-control pairing under third-party/API-key main app usage, Desktop dynamicTools/inputSchema thread-start schema drift, local conversation visibility recovery after model_provider switches, restored-conversation missing-cwd continuation repair, ASAR integrity repair, signing/installing patched MSIX packages, SDK cleanup, Fast Mode wire verification, local plugin marketplace registration, and optional custom model_instructions_file setup.",
+    "file_count": 140,
+    "total_bytes": 2463106.0,
+    "has_scripts": true,
+    "has_references": true
+  },
+  {
+    "dir": "discord",
+    "name": "discord",
+    "description": "Discord message-tool ops: send/read/edit/delete, react, poll, pin, thread, search, presence, media/components.",
+    "file_count": 2,
+    "total_bytes": 4918.0,
+    "has_scripts": false,
+    "has_references": false
+  },
+  {
+    "dir": "figma",
+    "name": "figma",
+    "description": "Use the Figma MCP server to fetch design context, screenshots, variables, and assets from Figma, and to translate Figma nodes into production code. Trigger when a task involves Figma URLs, node IDs, design-to-code implementation, or Figma MCP setup and troubleshooting.",
+    "file_count": 16,
+    "total_bytes": 25440.0,
+    "has_scripts": false,
+    "has_references": true
+  },
+  {
+    "dir": "gh-address-comments",
+    "name": "gh-address-comments",
+    "description": "Help address review/issue comments on the open GitHub PR for the current branch using gh CLI; verify gh auth first and prompt the user to authenticate if not logged in.",
+    "file_count": 12,
+    "total_bytes": 45276.0,
+    "has_scripts": true,
+    "has_references": false
+  },
+  {
+    "dir": "gh-fix-ci",
+    "name": "gh-fix-ci",
+    "description": "Use when a user asks to debug or fix failing GitHub PR checks that run in GitHub Actions; use `gh` to inspect checks and logs, summarize failure context, draft a fix plan, and implement only after explicit approval. Treat external providers (for example Buildkite) as out of scope and report only the details URL.",
+    "file_count": 12,
+    "total_bytes": 66860.0,
+    "has_scripts": true,
+    "has_references": false
+  },
+  {
+    "dir": "playwright",
+    "name": "playwright",
+    "description": "Use when the task requires automating a real browser from the terminal (navigation, form filling, snapshots, screenshots, data extraction, UI-flow debugging) via `playwright-cli` or the bundled wrapper script.",
+    "file_count": 18,
+    "total_bytes": 46512.0,
+    "has_scripts": true,
+    "has_references": true
+  },
+  {
+    "dir": "slack",
+    "name": "slack",
+    "description": "Slack tool actions: send/read/edit/delete messages, react, pin/unpin, list pins/reactions/emoji, member info.",
+    "file_count": 2,
+    "total_bytes": 3354.0,
+    "has_scripts": false,
+    "has_references": false
+  },
+  {
+    "dir": "xhs-markdown-card-collab",
+    "name": "xhs-markdown-card-collab",
+    "description": "Use when collaborating with humans to turn Markdown or lightly structured text into publishable Xiaohongshu image-card posts with explicit cover metadata, stable Chinese typography, browser-based pagination, and visual QA. Supports Markdown cleanup, cover planning, style-direction selection, page-density review, and iteration while keeping proven type-size ranges stable.",
+    "file_count": 10,
+    "total_bytes": 41376.0,
+    "has_scripts": false,
+    "has_references": true
+  }
+]
