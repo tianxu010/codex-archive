@@ -1,0 +1,218 @@
+#!/usr/bin/env python3
+"""从本机重新导出 Codex 能力档案（Linux/macOS 版，等价于 tools/export-archive.ps1）。
+
+采集内容：
+  * 自研技能：~/.codex/skills/（跳过 .system）
+  * 第三方技能索引：~/.agents/skills/（只索引，不入库）
+  * 配置快照：~/.codex/config.toml（脱敏）
+  * 重建 INVENTORY.md、skills.codex.json、skills.agents.json
+
+脱敏规则与 PowerShell 版保持一致：
+  1. 64 位十六进制串 -> <LOCAL_KEY_32HEX>
+  2. 家庭设备技能里的 192.168.1.x -> 按目录名替换为占位符
+  3. 配置里的密钥 -> ***REDACTED***
+
+用法：
+  python3 tools/export-archive.py [--codex-home ~/.codex] [--agents-home ~/.agents]
+                                   [--out-dir .] [--dry-run]
+"""
+
+import argparse
+import json
+import os
+import re
+import shutil
+import sys
+
+SKILL_HOST_PLACEHOLDER = {
+    "功放": "192.168.1.<YAMAHA>",
+    "芝杜": "192.168.1.<ZIDOO>",
+    "扫地机器人": "192.168.1.<ROBOT>",
+}
+
+TEXT_EXT = {".md", ".json", ".js", ".ts", ".py", ".ps1", ".sh", ".yml", ".yaml", ".txt", ".css", ".html"}
+
+SECRET_KEY_RE = re.compile(
+    r'(?m)^(\s*(?:experimental_bearer_token|MINIMAX_API_KEY|api_key|token|password|secret|client_secret)\s*=\s*")[^"]*(".*)$'
+)
+HEX64_RE = re.compile(r'\b[0-9a-fA-F]{64}\b')
+LAN_RE = re.compile(r'\b192\.168\.1\.\d{1,3}\b')
+
+
+def protect(text, skill_name=""):
+    if not text:
+        return text
+    text = HEX64_RE.sub("<LOCAL_KEY_32HEX>", text)
+    if skill_name in SKILL_HOST_PLACEHOLDER:
+        text = LAN_RE.sub(SKILL_HOST_PLACEHOLDER[skill_name], text)
+    return text
+
+
+def read_frontmatter(path):
+    name = desc = ""
+    try:
+        raw = open(path, encoding="utf-8", errors="replace").read()
+    except OSError:
+        return name, desc
+    m = re.match(r"(?s)^---\s*\r?\n(.*?)\r?\n---", raw)
+    if not m:
+        return name, desc
+    key, buf = None, []
+
+    def flush():
+        nonlocal name, desc
+        if key is None:
+            return
+        val = re.sub(r"\s+", " ", " ".join(buf)).strip().strip('"').strip("'")
+        if key == "name":
+            name = val
+        elif key == "description":
+            desc = val
+
+    for line in m.group(1).splitlines():
+        km = re.match(r"^([A-Za-z0-9_-]+):\s*(.*)$", line)
+        if km:
+            flush()
+            key = km.group(1)
+            val = km.group(2).strip()
+            if val in (">", "|", ">-", "|-"):
+                buf = []
+            else:
+                buf = [val.strip('"').strip("'")]
+        elif key and line.strip():
+            buf.append(line.strip())
+    flush()
+    return name, desc
+
+
+def copy_skill(src, dst, dry_run):
+    if os.path.exists(dst):
+        shutil.rmtree(dst)
+    if not dry_run:
+        shutil.copytree(src, dst, ignore=shutil.ignore_patterns(".git", "node_modules", "__pycache__"))
+    for dirpath, _dirs, files in os.walk(dst):
+        for fn in files:
+            if os.path.splitext(fn)[1].lower() not in TEXT_EXT:
+                continue
+            p = os.path.join(dirpath, fn)
+            try:
+                txt = open(p, encoding="utf-8", errors="replace").read()
+            except OSError:
+                continue
+            new = protect(txt, os.path.basename(dst))
+            if new != txt and not dry_run:
+                open(p, "w", encoding="utf-8").write(new)
+
+
+def collect_skills(root):
+    rows = []
+    if not os.path.isdir(root):
+        return rows
+    for entry in sorted(os.listdir(root)):
+        d = os.path.join(root, entry)
+        if not os.path.isdir(d) or entry == ".system":
+            continue
+        fm_name, fm_desc = read_frontmatter(os.path.join(d, "SKILL.md"))
+        files = []
+        for dirpath, _d, fs in os.walk(d):
+            for f in fs:
+                files.append(os.path.join(dirpath, f))
+        total = sum(os.path.getsize(f) for f in files if os.path.exists(f))
+        rows.append({
+            "dir": entry,
+            "name": fm_name or entry,
+            "description": protect(fm_desc, entry),
+            "file_count": len(files),
+            "total_bytes": total,
+            "has_scripts": os.path.isdir(os.path.join(d, "scripts")),
+            "has_references": os.path.isdir(os.path.join(d, "references")),
+        })
+    return rows
+
+
+def collect_agents(root):
+    rows = []
+    if not os.path.isdir(root):
+        return rows
+    for entry in sorted(os.listdir(root)):
+        d = os.path.join(root, entry)
+        if not os.path.isdir(d):
+            continue
+        fm_name, fm_desc = read_frontmatter(os.path.join(d, "SKILL.md"))
+        files = []
+        for dirpath, _d, fs in os.walk(d):
+            for f in fs:
+                files.append(os.path.join(dirpath, f))
+        total = sum(os.path.getsize(f) for f in files if os.path.exists(f))
+        rows.append({
+            "name": fm_name or entry,
+            "description": protect(fm_desc, entry),
+            "file_count": len(files),
+            "total_bytes": total,
+        })
+    return rows
+
+
+def write_inventory(path, rows, agents):
+    L = ["# Skill Inventory", "", "Auto-generated by `tools/export-archive.py`. Counts reflect what is on disk.", "",
+         "## Authored skills (`skills/codex/`)", "", "| Skill | Files | Size | Description |", "| --- | ---: | ---: | --- |"]
+    for s in sorted(rows, key=lambda x: x["name"]):
+        d = s["description"].replace("|", "/")
+        if len(d) > 160:
+            d = d[:157] + "..."
+        L.append(f"| `{s['name']}` | {s['file_count']} | {round(s['total_bytes']/1024,1)} KB | {d} |")
+    L += ["", f"**Total:** {len(rows)} skills, {round(sum(r['total_bytes'] for r in rows)/1048576,2)} MB."]
+    if agents:
+        L += ["", "## Installed third-party skills", "",
+              "Indexed in `skills.agents.json`, not vendored. Restored by the skill installer.", "",
+              f"**Total:** {len(agents)} skills, {round(sum(a['total_bytes'] for a in agents)/1048576,2)} MB (name-level index only)."]
+    open(path, "w", encoding="utf-8").write("\n".join(L) + "\n")
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--codex-home", default=os.path.expanduser("~/.codex"))
+    ap.add_argument("--agents-home", default=os.path.expanduser("~/.agents"))
+    ap.add_argument("--out-dir", default=os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    ap.add_argument("--dry-run", action="store_true")
+    args = ap.parse_args()
+
+    skills_src = os.path.join(args.codex_home, "skills")
+    skills_dst = os.path.join(args.out_dir, "skills", "codex")
+    os.makedirs(skills_dst, exist_ok=True)
+
+    if os.path.isdir(skills_src):
+        for entry in sorted(os.listdir(skills_src)):
+            src = os.path.join(skills_src, entry)
+            if not os.path.isdir(src) or entry == ".system":
+                continue
+            copy_skill(src, os.path.join(skills_dst, entry), args.dry_run)
+    print(f"skills exported: {len([d for d in os.listdir(skills_dst) if os.path.isdir(os.path.join(skills_dst, d))])}")
+
+    rows = collect_skills(skills_dst)
+    json.dump(rows, open(os.path.join(args.out_dir, "skills.codex.json"), "w", encoding="utf-8"),
+              ensure_ascii=False, indent=2)
+
+    agents = collect_agents(os.path.join(args.agents_home, "skills"))
+    if agents:
+        json.dump(agents, open(os.path.join(args.out_dir, "skills.agents.json"), "w", encoding="utf-8"),
+                  ensure_ascii=False, indent=2)
+
+    cfg = os.path.join(args.codex_home, "config.toml")
+    if os.path.exists(cfg):
+        text = open(cfg, encoding="utf-8", errors="replace").read()
+        text = SECRET_KEY_RE.sub(r"\1***REDACTED***\2", text)
+        text = protect(text)
+        header = ("# ARCHIVED REDACTED COPY of ~/.codex/config.toml\n"
+                  "# Secret values replaced with ***REDACTED*** before publishing.\n"
+                  "# Do not edit here; re-export from the local machine to refresh.\n\n")
+        os.makedirs(os.path.join(args.out_dir, "config"), exist_ok=True)
+        open(os.path.join(args.out_dir, "config", "config.redacted.toml"), "w", encoding="utf-8").write(header + text)
+        print("config snapshot written (redacted)")
+
+    write_inventory(os.path.join(args.out_dir, "INVENTORY.md"), rows, agents)
+    print(f"done -> {args.out_dir}")
+
+
+if __name__ == "__main__":
+    sys.exit(main())
